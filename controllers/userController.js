@@ -41,7 +41,7 @@ const login = async (req, res) => {
 		email: user.email,
 	};
 
-	const privateKey = readFileSync(join(__dirname, './../jwtRS256.key'));
+	const privateKey = readFileSync(join(__dirname, '../utils/jwtRS256.key'));
 
 	const signOptions = {
 		algorithm: 'RS256',

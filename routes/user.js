@@ -1,8 +1,9 @@
 const { Router } = require('express');
 const router = Router();
 const userController = require('../controllers/userController');
+const { authorize } = require('../utils/middleware');
 
-router.post('/addUser', async (req, res) => {
+router.post('/addUser', authorize, async (req, res) => {
 	await userController.addUser(req, res);
 });
 
