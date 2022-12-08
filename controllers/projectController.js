@@ -18,7 +18,7 @@ const projectCount = async (req, res) => {
 };
 
 const getProjectById = async (req, res) => {
-	const id = req.params;
+	const id = req.params.id;
 	if (!isValidObjectId(id)) return res.status(400).json({ status: 'failed', message: 'The id must be an ObjectID' });
 
 	const project = await projectService.getProjectById(id);
