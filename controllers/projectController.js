@@ -35,7 +35,7 @@ const addProject = async (req, res) => {
 	const project = await projectService.getProjectByName(name);
 	if (project) return res.status(460).json({ status: 'failed', message: 'This project already exists' });
 
-	await projectService.createProject(name, image, desc, link);
+	await projectService.createProject(name, image, link, desc);
 
 	return res.status(201).json({
 		status: 'success',
